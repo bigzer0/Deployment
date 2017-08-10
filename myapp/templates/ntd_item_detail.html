@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Bo Services - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h1>NTD SERVICES</h1>
+
+
+
+    <h1>{{  ntd_item_detail.i_name }}</h1>
+    <h2>{{ ntd_item_detail.i_host }}</h2>
+    <h2>{{  ntd_item_detail.i_service }}</h2>
+    <p>{{  ntd_item_detail.i_subsystem}}</p>
+    <p>{{  ntd_item_detail.i_link_source }}</p>
+{#    <a href="{% url 'edit_detail_bo' name=item_detail.i_name %}">Deploy Me!</a>#}
+     <div class="btn btn--border btn--primary btn--animated">
+
+            <a class="btn-draw" href="{% url 'edit_detail_ntd' name=ntd_item_detail.i_name %}">Deploy Me!</a>
+    </div>
+
+{% endblock content %}

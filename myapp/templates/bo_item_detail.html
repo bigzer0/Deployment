@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Bo Services - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h1>BO SERVICES</h1>
+
+
+
+    <h1>{{ item_detail.i_name }}</h1>
+    <p>{{ item_detail.i_host }}</p>
+    <p>{{ item_detail.i_service }}</p>
+    <p>{{ item_detail.i_subsystem}}</p>
+    <p>{{ item_detail.i_link_source }}</p>
+     <p>{{ item_detail.i_processName}}</p>
+    <p>{{ item_detail.i_baseDir }}</p>
+{#    <a href="{% url 'edit_detail_bo' name=item_detail.i_name %}">Deploy Me!</a>#}
+     <div class="btn btn--border btn--primary btn--animated">
+
+            <a class="btn-draw" href="{% url 'edit_detail_bo' name=item_detail.i_name %}">Deploy Me!</a>
+    </div>
+    <div class="btn btn--border btn--primary btn--animated">
+
+            <a class="btn-draw" href="{% url 'show_log_bo' name=item_detail.i_name %}">Show log !</a>
+    </div>
+
+{% endblock content %}
